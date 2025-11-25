@@ -14,8 +14,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy source
+# Copy source and examples
 COPY src ./src
+COPY ../examples ./examples
 
 WORKDIR /app/src
 

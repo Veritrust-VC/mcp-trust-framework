@@ -69,6 +69,33 @@ MCPF is compatible with any existing MCP server or host. It does not change the 
    See [`examples/`](examples/) for sample registry entries, MCP server credentials, and DID documents.
 
 
+## .well-known discovery
+
+A registry operator can expose discovery metadata at:
+
+```text
+https://<domain>/.well-known/mcp-trust-registry.json
+```
+
+An example structure is:
+
+```json
+{
+  "mcpfVersion": "1.0",
+  "registry": {
+    "name": "Veritrust MCP Trust Registry",
+    "baseUrl": "https://ans.veritrust.vc/mcp"
+  },
+  "issuer": {
+    "did": "did:web:veritrust.vc",
+    "name": "Veritrust"
+  }
+}
+```
+
+Clients can fetch this file first and use `registry.baseUrl` to configure a `RegistryClient`.
+
+
 ## Status
 
 - Specification: **Draft 1.0**
