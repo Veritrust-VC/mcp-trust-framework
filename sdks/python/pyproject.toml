@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcpf-client"
+version = "0.1.0"
+description = "Python client SDK for MCP Trust Framework registries"
+authors = [
+  { name = "Veritrust", email = "info@veritrust.vc" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests>=2.31.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/Veritrust-VC/mcp-trust-framework"
+Repository = "https://github.com/Veritrust-VC/mcp-trust-framework"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcpf_client*"]
+
