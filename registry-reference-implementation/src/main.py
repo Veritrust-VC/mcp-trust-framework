@@ -38,23 +38,26 @@ storage = InMemoryStorage()
 
 def _load_example_entry() -> None:
     """
-    Try to load the sample registry entry from ../../examples/sample-registry-entry.json
-    and add a default issuer.
+    Try to load the sample registry entry from known locations and add a default issuer.
     """
-    try:
-        # from src/main.py → go two levels up to repo root
-        base = Path(__file__).resolve().parents[2]
-        example_path = base / "examples" / "sample-registry-entry.json"
-        if example_path.is_file():
-            with example_path.open("r", encoding="utf-8") as f:
-                data = json.load(f)
-            entry = RegistryEntry(**data)
-            storage.upsert_server(entry)
-            print(f"[startup] Loaded example registry entry from {example_path}")
-        else:
-            print(f"[startup] No example registry entry found at {example_path}")
-    except Exception as exc:
-        print(f"[startup] Failed to load example registry entry: {exc!r}")
+    base = Path(__file__).resolve()
+    candidates = [
+        # Repository layout: repo_root/examples/sample-registry-entry.json
+        base.parents[2] / "examples" / "sample-registry-entry.json",
+        # Docker layout: /app/examples/sample-registry-entry.json (src/ is copied separately)
+        base.parents[1] / "examples" / "sample-registry-entry.json",
+    ]
+
+    example_path = next((path for path in candidates if path.is_file()), None)
+
+    if example_path is None:
+        print("[startup] No example registry entry found in any known location")
+    else:
+        with example_path.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+        entry = RegistryEntry(**data)
+        storage.upsert_server(entry)
+        print(f"[startup] Loaded example registry entry from {example_path}")
 
     # Add a default issuer for demonstration purposes
     storage.add_issuer(

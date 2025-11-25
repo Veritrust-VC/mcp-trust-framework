@@ -16,14 +16,20 @@ This SDK helps you:
 
 ## Installation
 
-For local development (inside this monorepo), you can install in editable mode:
+For local development in this repository:
 
 ```bash
 cd sdks/python
 pip install -e .
 ```
 
-This will install the package as `mcpf_client`.
+This installs the package as `mcpf_client` from the local sources.
+
+Once published to PyPI:
+
+```bash
+pip install mcpf-client
+```
 
 ## Quick Start
 
@@ -42,8 +48,6 @@ entry = client.get_server(SERVER_DID)
 print("Registry entry:", entry)
 
 # 2. Fetch MCPServerCredential (first URL in entry.credentials)
-if not entry.credentials:
-    raise RuntimeError("No credentials listed for this server.")
 cred_url = entry.credentials[0]
 credential = requests.get(cred_url, timeout=5).json()
 
