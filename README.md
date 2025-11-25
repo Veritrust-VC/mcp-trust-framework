@@ -1,3 +1,10 @@
+![Status](https://img.shields.io/badge/status-draft-blue)
+![Spec](https://img.shields.io/badge/MCPF-1.0--draft-important)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Python](https://img.shields.io/badge/sdk-python-blue)
+![TypeScript](https://img.shields.io/badge/sdk-typescript-blueviolet)
+![FastAPI](https://img.shields.io/badge/registry-FastAPI-009688)
+
 # MCP Trust Framework (MCPF)
 
 The **Model Context Protocol (MCP)** defines how AI agents and hosts call external tools and data sources.  
