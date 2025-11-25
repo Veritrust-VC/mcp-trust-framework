@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1"
+  ],
+  "id": "did:web:veritrust.vc:mcp:edgeguard-siem",
+  "verificationMethod": [
+    {
+      "id": "did:web:veritrust.vc:mcp:edgeguard-siem#key-1",
+      "type": "Ed25519VerificationKey2020",
+      "controller": "did:web:veritrust.vc:mcp:edgeguard-siem",
+      "publicKeyMultibase": "zMockPublicKeyMultibaseValue"
+    }
+  ],
+  "assertionMethod": [
+    "did:web:veritrust.vc:mcp:edgeguard-siem#key-1"
+  ],
+  "service": [
+    {
+      "id": "#mcp-endpoint",
+      "type": "MCPServerEndpoint",
+      "serviceEndpoint": "https://edgeguard.cyberfort.lv/mcp"
+    },
+    {
+      "id": "#mcp-registry-entry",
+      "type": "MCPRegistryEntry",
+      "serviceEndpoint": "https://ans.veritrust.vc/mcp/servers/did:web:veritrust.vc:mcp:edgeguard-siem"
+    }
+  ]
+}

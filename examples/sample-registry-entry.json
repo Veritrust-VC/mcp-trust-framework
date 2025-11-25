@@ -1,0 +1,23 @@
+{
+  "did": "did:web:veritrust.vc:mcp:edgeguard-siem",
+  "endpoint": "https://edgeguard.cyberfort.lv/mcp",
+  "manifest": "https://edgeguard.cyberfort.lv/mcp/manifest.json",
+  "credentials": [
+    "https://veritrust.vc/vc/edgeguard-siem.json"
+  ],
+  "metadata": {
+    "capabilities": [
+      "telemetry",
+      "alerts",
+      "status"
+    ],
+    "organization": "Cyberfort SIA",
+    "country": "LV",
+    "tags": [
+      "security",
+      "energy",
+      "siem"
+    ],
+    "status": "active"
+  }
+}
