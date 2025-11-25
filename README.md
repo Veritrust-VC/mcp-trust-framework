@@ -27,7 +27,6 @@ It provides:
 
 MCPF is compatible with any existing MCP server or host. It does not change the MCP protocol; it adds a **trust and discovery layer** on top.
 
----
 
 ## Repository Structure
 
@@ -49,7 +48,6 @@ MCPF is compatible with any existing MCP server or host. It does not change the 
 - `governance/`  
   Versioning, roadmap, and contributor guidelines at the framework level.
 
----
 
 ## Quick Start
 
@@ -70,7 +68,6 @@ MCPF is compatible with any existing MCP server or host. It does not change the 
 
    See [`examples/`](examples/) for sample registry entries, MCP server credentials, and DID documents.
 
----
 
 ## Status
 
@@ -80,7 +77,6 @@ MCPF is compatible with any existing MCP server or host. It does not change the 
 
 This project is intended to be open, interoperable, and suitable for enterprise deployment.
 
----
 
 ## License
 
